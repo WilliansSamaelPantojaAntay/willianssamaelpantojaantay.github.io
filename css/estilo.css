@@ -1,0 +1,622 @@
+/* importamos la fuente */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c';
+}
+
+body {
+    height: 100vh;
+    background-color: #192a31;
+    /*#192a31*/
+    background-size: cover;
+    background-position: center;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Estilos del resplandor */
+.sombra {
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.5), transparent 80%);
+    border-radius: 50%;
+    mix-blend-mode: color-dodge;
+    opacity: 0.2;
+    transform: translate(-50%, -50%);
+}
+
+/*Header*/
+header {
+    width: 100%;
+    height: 60px;
+    transition: 0.7s;
+    z-index: 10;
+    margin: 0 auto;
+}
+
+/*header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.7s;
+    padding: 0 20px;
+    z-index: 10;
+}*/
+header.abajo {
+    background: #041116;
+    padding: 0 20px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*nav{
+    width: 100%;
+    height: 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+    overflow: hidden;
+}*/
+.logo a {
+    color: #2adddd;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li {
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li::after {
+    content: "";
+    width: 0;
+    height: 4px;
+    background: #6604ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s ease;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    padding: 5px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    color: #fff;
+}
+
+header li a:hover {
+    padding: 5px 10px;
+    background-color: #2adddd;
+    color: #000;
+    border-radius: 15px;
+}
+
+@media(max-width:992px) {
+    header {
+        background: #041116;
+        padding: 0 30px;
+    }
+
+    nav {
+        margin-top: -20px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .bars {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bars .line {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+    }
+
+    nav {
+        background-color: #000000;
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    nav.active {
+        height: 450px;
+    }
+
+    nav ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    nav.active ul {
+        opacity: 1;
+    }
+
+    nav ul li a {
+        margin-bottom: 20px;
+    }
+}
+
+/*Cuerpo*/
+main {
+    margin-top: 75px;
+}
+
+/*Section general*/
+section {
+    background: #1b3438;
+    margin: auto 12%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h3,
+h4 {
+    color: #2adddd;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/*Inicio*/
+.tipeo {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: blink 0.7s step-end infinite;
+    border-bottom: solid #2adddd;
+    padding: 0 5px;
+    transition: 0.5s;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.redes-sociales a {
+    font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #333;
+}
+
+/* Efectos de cambio de color y animación al pasar el mouse */
+.redes-sociales a:hover {
+    transform: scale(1.2);
+}
+
+/* Colores de hover para los íconos de FontAwesome */
+.redes-sociales a:hover .fa-facebook {
+    color: #3b5998; /* Azul Facebook */
+}
+
+.redes-sociales a:hover .fa-twitter {
+    color: #1da1f2; /* Azul Twitter */
+}
+
+.redes-sociales a:hover .fa-instagram {
+    color: #e4405f; /* Rosa Instagram */
+}
+
+.redes-sociales a:hover .fa-linkedin {
+    color: #0077b5; /* Azul LinkedIn */
+}
+
+.redes-sociales a:hover .fa-github {
+    color: #333; /* Negro GitHub */
+}
+
+
+.hobby-box,
+.hobby-hover {
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.hobby-hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    background-color: #1b394c;
+    z-index: 100;
+}
+
+.hobby-wrapper {
+    position: relative;
+    height: auto;
+    /* altura se ajusta automáticamente */
+    min-height: 70px;
+}
+
+.hobby-description {
+    display: none;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hobby-hover .hobby-description {
+    display: block;
+    opacity: 1;
+}
+
+.group-box {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: none;
+    border-radius: 8px;
+}
+
+.box-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 12px;
+    color: #2adddd;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.border-line {
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 40%;
+    z-index: 1;
+}
+
+.border-line.left {
+    left: 0;
+}
+
+.border-line.right {
+    right: 0;
+}
+
+/*Sobre Mí*/
+.perfil {
+    height: 70%;
+}
+
+.perfil img {
+    width: 100%;
+    height: 80%;
+}
+
+/*Servicios*/
+.info-servicio {
+    background: rgba(204, 204, 204, 0.1);
+    padding: 80px 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.info-servicio:hover {
+    background: #42bbe0;
+    border-color: #42bbe0;
+}
+
+.info-servicio .icono {
+    width: 64px;
+    height: 64px;
+    background: #42bbe0;
+    transition: all 0.3s ease-out 0s;
+}
+
+.info-servicio .icono i {
+    color: #fff;
+    font-size: 40px;
+}
+
+.info-servicio:hover .icono {
+    background-color: #fff;
+}
+
+.info-servicio:hover .icono i {
+    color: #42bbe0;
+}
+
+/*Experiencia*/
+.experiencia-item {
+    margin: 30px 0;
+    padding: 0 0 10px 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.experiencia-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #18d26e;
+    border: 2px solid #18d26e;
+}
+
+.experiencia-item h4 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: #54cc8c;
+    margin-bottom: 10px;
+}
+
+.experiencia-item h5 {
+    font-size: 16px;
+    background: rgba(42, 221, 221, 0.15);
+    padding: 5px 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/*Habilidades*/
+/*Proyectos*/
+#filtroProyecto {
+    padding: 0;
+    margin: 0 auto 10px auto;
+    list-style: none;
+    text-align: center;
+    border-radius: 50px;
+    padding: 2px 15px;
+}
+
+#filtroProyecto li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 16px 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 3px 10px 3px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+}
+
+#filtroProyecto li:hover {
+    background-color: #42bbe0;
+    padding: 9px 22px;
+}
+
+#filtroProyecto .filtro-activado {
+    background-color: #42bbe0;
+}
+
+#filtroProyecto .filtro-activado:hover {
+    background-color: #42bbe0;
+}
+
+.img-proyecto {
+    width: 100%;
+    height: 70%;
+}
+
+.links {
+    justify-content: center;
+    align-items: center;
+}
+
+.link-proyecto {
+    padding: 4%;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-proyecto i {
+    color: #2adddd;
+}
+
+.links .link-proyecto i:hover {
+    font-size: 20px;
+}
+
+.detalle-proyecto h3 {
+    margin: 10px 0 5px 0;
+}
+
+.detalle-proyecto ul {
+    /*padding: 0;*/
+    gap: 0.5rem;
+
+}
+
+.detalle-proyecto ul li {
+    border-radius: 10px;
+    background-color: rgba(42, 221, 221, 0.4);
+}
+
+@media (max-width: 992px) {
+    .info-proyecto {
+        height: 200px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .img-proyecto {
+        width: 100%;
+        height: 100%;
+    }
+
+    .info-proyecto:hover .links {
+        opacity: 1;
+    }
+
+    .info-proyecto:hover .links .link-proyecto {
+        padding: 20px 40px;
+    }
+
+    .links {
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        z-index: 3;
+        transition: all ease-in-out 0.3s;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+    }
+
+    .link-proyecto i {
+        font-size: 30px;
+        color: #2adddd;
+    }
+}
+
+.todo-proyecto {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.todo-proyecto a:hover {
+    border-bottom: solid #2adddd;
+    padding: 0 5px;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+
+/*Todos los proyectos*/
+#todoproyecto a {
+    color: #2adddd;
+}
+
+table {
+    width: 100%;
+}
+
+table tr {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    /* Línea fina y muy clara */
+}
+
+table td {
+    padding: 10px 8px 2px;
+}
+
+table ul.construido li {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    background-color: rgba(42, 221, 221, 0.4);
+    padding: 5px;
+    margin: 0 3px 10px 3px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/*Conocimiento*/
+.conocimiento-titulo {
+    text-transform: uppercase;
+}
+
+.conocimiento-item {
+    margin: 30px 0;
+    padding: 0 0 10px 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.conocimiento-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #18d26e;
+    border: 2px solid #18d26e;
+}
+
+.conocimiento-item h4 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: #54cc8c;
+    margin-bottom: 10px;
+}
+
+.conocimiento-item h5 {
+    font-size: 16px;
+    background: rgba(42, 221, 221, 0.15);
+    padding: 5px 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/*Contacto*/
